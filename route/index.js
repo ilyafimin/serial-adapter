@@ -5,7 +5,7 @@ const { ReadlineParser } = require('@serialport/parser-readline')
 let data = []
 
 const parser = new ReadlineParser();
-const port = new SerialPort({ path: 'COM3', baudRate: 19200, autoOpen: false });
+const port = new SerialPort({ path: 'COM3', baudRate: 115200, autoOpen: false });
 port.pipe(parser);
 
 parser.on('data', (data_) => { data.push(data_.replace('\r', '')) })
